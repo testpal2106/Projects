@@ -1,0 +1,1390 @@
+﻿
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/opensans-bold-webfont.eot');
+    src: url('../fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-bold-webfont.woff') format('woff'),
+         url('../fonts/opensans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansbold_italic';
+    src: url('../fonts/opensans-bolditalic-webfont.eot');
+    src: url('../fonts/opensans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-bolditalic-webfont.svg#open_sansbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansextrabold';
+    src: url('../fonts/opensans-extrabold-webfont.eot');
+    src: url('../fonts/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-extrabold-webfont.woff') format('woff'),
+         url('../fonts/opensans-extrabold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-extrabold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansextrabold_italic';
+    src: url('../fonts/opensans-extrabolditalic-webfont.eot');
+    src: url('../fonts/opensans-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-extrabolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-extrabolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-extrabolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-extrabolditalic-webfont.svg#open_sansextrabold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('../fonts/opensans-italic-webfont.eot');
+    src: url('../fonts/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-italic-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-italic-webfont.woff') format('woff'),
+         url('../fonts/opensans-italic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/opensans-light-webfont.eot');
+    src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-light-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-light-webfont.woff') format('woff'),
+         url('../fonts/opensans-light-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight_italic';
+    src: url('../fonts/opensans-lightitalic-webfont.eot');
+    src: url('../fonts/opensans-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-lightitalic-webfont.svg#open_sanslight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../fonts/opensans-semibold-webfont.eot');
+    src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-semibold-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sanssemibold_italic';
+    src: url('../fonts/opensans-semibolditalic-webfont.eot');
+    src: url('../fonts/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-semibolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-semibolditalic-webfont.svg#open_sanssemibold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntulight_italic';
+    src: url('../fonts/ubuntu-li-webfont.eot');
+    src: url('../fonts/ubuntu-li-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-li-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-li-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-li-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-li-webfont.svg#ubuntulight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('../fonts/ubuntu-m-webfont.eot');
+    src: url('../fonts/ubuntu-m-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-m-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-m-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-m-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-m-webfont.svg#ubuntumedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntumedium_italic';
+    src: url('../fonts/ubuntu-mi-webfont.eot');
+    src: url('../fonts/ubuntu-mi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-mi-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-mi-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-mi-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-mi-webfont.svg#ubuntumedium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntu_monobold';
+    src: url('../fonts/ubuntumono-b-webfont.eot');
+    src: url('../fonts/ubuntumono-b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntumono-b-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntumono-b-webfont.woff') format('woff'),
+         url('../fonts/ubuntumono-b-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntumono-b-webfont.svg#ubuntu_monobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('../fonts/ubuntu-m-webfont.eot');
+    src: url('../fonts/ubuntu-m-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-m-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-m-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-m-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-m-webfont.svg#ubuntumedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntumedium_italic';
+    src: url('../fonts/ubuntu-mi-webfont.eot');
+    src: url('../fonts/ubuntu-mi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-mi-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-mi-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-mi-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-mi-webfont.svg#ubuntumedium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntu_monobold';
+    src: url('../fonts/ubuntumono-b-webfont.eot');
+    src: url('../fonts/ubuntumono-b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntumono-b-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntumono-b-webfont.woff') format('woff'),
+         url('../fonts/ubuntumono-b-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntumono-b-webfont.svg#ubuntu_monobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ubuntu_monobold_italic';
+    src: url('../fonts/ubuntumono-bi-webfont.eot');
+    src: url('../fonts/ubuntumono-bi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntumono-bi-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntumono-bi-webfont.woff') format('woff'),
+         url('../fonts/ubuntumono-bi-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntumono-bi-webfont.svg#ubuntu_monobold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntu_monoregular';
+    src: url('../fonts/ubuntumono-r-webfont.eot');
+    src: url('../fonts/ubuntumono-r-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntumono-r-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntumono-r-webfont.woff') format('woff'),
+         url('../fonts/ubuntumono-r-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntumono-r-webfont.svg#ubuntu_monoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubuntu_monoitalic';
+    src: url('../fonts/ubuntumono-ri-webfont.eot');
+    src: url('../fonts/ubuntumono-ri-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntumono-ri-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntumono-ri-webfont.woff') format('woff'),
+         url('../fonts/ubuntumono-ri-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntumono-ri-webfont.svg#ubuntu_monoitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('../fonts/ubuntu-r-webfont.eot');
+    src: url('../fonts/ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-r-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-r-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-r-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-r-webfont.svg#ubunturegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntulight';
+    src: url('../fonts/ubuntu-l-webfont.eot');
+    src: url('../fonts/ubuntu-l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-l-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-l-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-l-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-l-webfont.svg#ubuntulight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('../fonts/ubuntu-b-webfont.eot');
+    src: url('../fonts/ubuntu-b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-b-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-b-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-b-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-b-webfont.svg#ubuntubold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html{width:100%; float:left;height:100%;}
+img{border:none;outline:none;}
+select::-ms-expand{display:none;}
+input:focus,textarea:focus{outline:none;}
+textarea:focus{outline:none;}
+select:focus{outline:none;}
+select{outline:none; font-family: 'open_sansregular';appearance:none;-moz-appearance:none;-webkit-appearance:none;-o-appearance:none;}
+a:focus{border:none;outline:none;}
+*{margin:0px;padding:0px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+html{margin-top:0px;width:100%;height:100%;}
+.clr{clear:both;}
+.flt{float:left;}
+.flr{float:right;}
+ul{list-style:none;}
+ul li{float:left;}
+ul,ol,li{margin:0px;}
+a:hover{text-decoration:none !important;}
+a{text-decoration:none;color:#333;font-size:15px;}
+button, input[type=submit], a, input[type=button]{cursor:pointer;}
+h1,h2,h3,h4,h5,h6{margin:0px;padding:0px;font-weight:normal;font-weight:normal;}
+body{width:100%;font-family: 'open_sansregular';font-size:15px;background:#fff;line-height:24px;position:relative;min-height:100%; float:left;}
+
+/*****************header*****************/
+header {
+    float: left;
+    width: 100%;position:relative;
+}
+
+header  figure {
+    float: left;
+    width: 100%;
+}
+header  figure img{ float: left; width: 100%;}
+
+.header-outer {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    float: left;
+    padding: 18px 0 8px;
+    position: absolute;
+    width: 100%;
+}
+.wrapper{width:1170px; margin:0px auto;}
+.header-outer .logo{width:auto; float:left;}
+
+.right-div {
+    float: right;
+    width: auto;    padding: 20px 0 15px;
+}
+
+nav {
+    display: inline-block;
+    width: auto;
+}
+.right-div ul {
+    float: left;
+    width: auto; padding: 4px 0;
+}
+
+.right-div ul li {
+    float: left;
+    margin: 0 17px;
+    width: auto;
+}
+.right-div ul li:last-child{margin-right:0px;}
+.right-div ul li a {
+    color: #fff;padding-bottom:14px; position:relative;font-family: ubunturegular;   float: left;
+}
+.right-div ul li a.active:before,.right-div ul li a:hover:before{position:absolute;left:0;right:0;margin:auto;bottom:0;content:"";width:20px;height:2px; background:#fff;}
+.header-btn {
+    display: inline-block;
+    vertical-align: top;margin-left:39px;
+}
+.header-btn a {
+    background: #cbcbcb none repeat scroll 0 0;
+    border-radius: 50px;
+    display: inline-block;
+    height: 39px;
+    margin-left: 8px;
+    padding: 6px 0;
+    text-align: center;
+    width: 100px;font-size:14px; color:#302225;font-family: ubunturegular;
+}
+.header-btn a:first-child{margin-left:0px;}
+.header-btn a.active ,.header-btn a:hover{background:#45619d;color:#fff;box-shadow: 0 0 5px rgba(0, 0, 0, 0.58);-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.58);-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.58);-o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.58);-ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.58);}
+
+.silde-content {
+    bottom: 179px;
+    color: #fff;
+    font-family: ubunturegular;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    max-width:754px;text-align:center;width:100%
+}
+
+.silde-content h2 {
+    font-size: 58px;
+    line-height: 61px;
+    text-align: center;margin-bottom:50px;width:100%;float:left;font-family: ubuntulight;
+}
+.silde-content h2 span{display:block;}
+.silde-content .shop-btn{width:254px;display:inline-block;padding: 11px 30px 11px 0;background:#45619d url(../../images/cart.png)no-repeat 206px center;height:50px; text-align:center;border-radius:50px;font-size:19px;color:#fff;font-family: ubuntumedium;}
+
+.cir-slide {
+    bottom: 15px;
+    float: left;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.cir-slide  a {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #dedede;
+    border-radius: 10px;
+    display: inline-block;
+    height: 15px;
+    margin: 0 2px;
+    width: 15px;
+}
+.cir-slide  a.active{background:#45619c;}
+.online-shoping-block{width:100%; float:left;padding-top:45px;background:#fff;}
+.online-shoping-block .online-shoping-block-inner{width:100%; float:left;text-align:center;}
+
+.how-to-shop {
+    border-bottom: 1px solid #c9c9c9;
+    float: left;
+    padding-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+.how-to-shop h2 {
+    font-size: 25px;
+    line-height: 38px;
+    text-align: center;margin-bottom:37px;width:100%;float:left;font-family: ubuntulight;color:#000000;
+}
+.how-to-shop .how-to-shop-btn{width:317px;display:inline-block;padding: 13px 0px 12px 30px;background:#fff url(../../images/vid.png)no-repeat 17px center;height:54px; text-align:center;border-radius:54px;font-size:18px;color:#000000;font-family: ubunturegular;border:1px solid #000000;}
+.block-3-stp{width:100%; float:left;padding:45px 0 55px;background:#fff;text-align:center;}
+.block-3-stp1{width:33.33%; float:left;}
+.block-3-stp1 figure{width:100%; float:left;position:relative;left:0;top:0;margin-bottom:20px;}
+.block-3-stp1 figure:before{max-width:143px;position:absolute;left:82%;top:0;margin:auto;bottom:0;content:"";width:100%;height:28px; background: url(../../images/stp-arr.png)no-repeat left center;z-index:1;}
+.block-3-stp1:last-child figure:before{display:none;}
+.block-3-stp1 h2 {
+    font-size: 23px;
+    line-height: 33px;
+    text-align: center;margin-bottom:0px;width:100%;float:left;font-family: ubuntulight;color:#000000;
+}
+.block-3-stp1 p {
+    font-size: 14px; padding: 0 19%;
+    line-height: 20px;
+    text-align: center;width:100%;float:left;color:#4b4b4b;
+}
+.lap-vdo-block{text-align: center;width:100%;float:left;}
+.lap-img{display:inline-block;position:relative;max-width:972px;width:100%;}
+.vdo-img{ left: 0; margin: auto; max-width: 737px; position: absolute;  right: 0;    top: 32px;  width: 100%;}
+.vdo-img-inner{width:100%; position:relative;left:0;}
+.vdo-img-inner .vdo-icon{position: absolute;  right: 0; top: 0px;bottom:0;width:107px;height:107px;left:0;margin:auto;}
+.choose-us-div{text-align: center;width:100%;float:left;padding:208px 0 50px 0px;margin-top:-166px; background:#fff url(../../images/blue-gradient.png)no-repeat left center ;background-size:cover;background-attachment:fixed;color:#fff;}
+
+.choose-3-stp{width:100%; float:left;padding:0px 0 55px;text-align:center;border-bottom:1px solid #2f3647;}
+.choose-3-stp1{width:33.33%; float:left;}
+.choose-3-stp1 figure{width:100%; float:left;position:relative;left:0;top:0;margin-bottom:20px;}
+.choose-3-stp1:last-child figure:before{display:none;}
+.choose-3-stp1 h2 {
+    font-size: 23px;
+    line-height: 33px;
+    text-align: center;margin-bottom:0px;width:100%;float:left;font-family: ubuntulight;color:#000000;
+}
+.choose-3-stp1 p {
+    font-size: 17px; padding: 0 14%;
+    line-height: 24px;
+    text-align: center;width:100%;float:left;font-family: ubuntulight;
+}
+.choose-us-div h2 {
+    font-size: 31px;
+    line-height: 38px;
+    text-align: center;margin-bottom:37px;width:100%;float:left;font-family: ubuntulight;
+}
+.choose-slider-block{width:100%; float:left;margin-top:50px;text-align:center;position:relative;}
+.choose-slider-block-inner{width:100%; max-width:530px;display:inline-block;padding-bottom:65px;}
+.choose-slider-block-inner p{width:100%; display:inline-block;font-size:14px; font-family: ubuntulight_italic;padding-bottom:10px;}
+.choose-slider-block-inner b{width:100%; display:inline-block;font-size:16px; font-family: ubuntubold;font-weight:normal;}
+.choose-slider-block-inner h2{margin-bottom:32px;}
+.choose-slider-block-inner .cir-slide{bottom:0px;}
+.logos-block{height:105px;background:#fff;width:100%; float:left;position:relative;}
+.logo-heading{background:#45619d url(../../images/arrow-right-logo.png)no-repeat right center ;height:100%;width:298px;position:absolute;left:0;top:0;text-align:right;padding:28px 40px 28px 0;color:#fff;}
+.logo-heading h2{font-size:29px;font-family: ubuntulight;line-height:25px;}
+.logo-heading h2 span{display:block;}
+.log0-slide{width:100%; float:left;height:100%;padding-left:298px;overflow:hidden;}
+.log0-slide-inner{ float: left;
+    padding: 13px 20px;
+    width: 1400px;}
+ .log0-slide-inner a{margin:0px 3%;float:left;}
+/***************header end**************/
+/**************footer************/
+.footer-top{width:100%; float:left;background: url("../images/footer-top.png")no-repeat left top;padding:43px 0px 30px;text-align:center;background-size:cover;text-align:center;}
+.wrapper1{max-width:1030px; width:100%;text-align:left;display:inline-block;position:relative;}
+.address{width:335px; float:left;text-align:left;}
+.links{width:256px; float:left;text-align:left;}
+.form-footer{width:402px; float:right;text-align:left;}
+.footer-top h2{font-size:30px; color:#fff;margin-bottom:27px;font-family: ubuntulight;}
+.address p{font-size:14px;line-height:21px;color:#fff;margin-bottom:14px; font-family: ubunturegular;}
+.address p span{width:70px; float:left;}
+.follow-us{width:100%; float:left;margin-top: 9px;}
+.follow-us h6{width:auto; float:left;margin-right:10px;font-size:20px;color:#fff; font-family: ubunturegular;padding: 5px 0;}
+.s-links{width:auto; float:left;}
+.s-links a{float:left;margin-right:10px;}
+.links ul{width:100%; float:left;}
+.links ul li{width:100%; float:left; margin-bottom: 4px;}
+.links ul li a{width:100%; float:left; color:#fff ;font-size:14px;padding-left:20px;background: url("../images/f-arr.png")no-repeat left 5px; font-family: ubunturegular;}
+.footer-form{width:100%; float:left;}
+.footer-form .row{width:100%; float:left;margin-bottom:13px;}
+.footer-form .row .left{width:49%; float:left;}
+.footer-form .row .right{width:49%; float:right;}
+.footer-form .row input{height:41px; float:left;border-radius:3px;background:#101010;color:#fff;padding:10px ;font-size:13px;border:none;width:100%; font-family: ubunturegular;}
+.footer-form .row textarea{height:81px; float:left;border-radius:3px;background:#101010;color:#fff;padding:10px ;font-size:13px;width:100%;border:none;font-family: ubunturegular;}
+.footer-form .row input.footer-sub-btn{width:110px; background:#45619d;color:#fff;text-align:center;font-size:14px;}
+footer{width:50%; float:left;color:#fff;position:absolute;left:0;bottom:20px;text-align:left;}
+footer p{font-size:14px;width:100%; text-align:left;max-width:500px; font-family: ubunturegular;}
+/****************end********/
+/*****************login page*****************/
+.login-page {
+	width: 100%;
+	float: left;
+	background: url("../images/login-bg.png") no-repeat fixed left top;
+	background-size: cover;
+	min-height: 100%;
+	float: left;
+	padding-bottom: 55px;
+}
+.login-page footer {
+    bottom: 0;
+   position: absolute;
+    width: 100%;
+}
+.footer-copy-right{
+text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.login-form-block {
+    float: left;
+    margin: 213px 0 55px;
+    position: relative;
+    width: 100%;
+}
+.login-form-block.login-blk-padd {
+	margin: 29px 0;
+}
+.welcome-block {
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+  border-radius: 5px;
+  color: #fff;
+  float: left;
+  margin-left: 15px;
+  padding: 60px 28px;
+  width: 650px;
+}
+.welcome-block h2 {
+    color: #ffffff;
+    font-family: "ubunturegular";
+    font-size: 39px;
+    line-height: 42px;
+    margin-bottom: 4px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 100%;
+}
+.welcome-block h3 {
+  background: rgba(0, 0, 0, 0) url("../images/h3-line.png") no-repeat scroll center bottom;
+  color: #ffffff;
+  font-family: "ubunturegular";
+  font-size: 39px;
+  line-height: 43px;
+  margin-bottom: 27px;
+  padding-bottom: 25px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
+.welcome-block p {
+  font-family: "open_sansregular";
+  font-size: 14px;
+  margin-bottom: 24px;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+.links-socail {
+	float: left;
+	width: 100%;
+}
+.links-socail a {
+	display: inline-block;
+	float: left;
+}
+.links-socail a img {
+	width: 100%;
+	max-width: 240px;
+	float: left;
+}
+.links-socail a:last-child {
+	float: right;
+}
+.login-block {
+	width: 430px;
+	float: right;
+	border-radius: 4px;
+	background: #0a0d13;
+	border: 1px solid #44609b;
+}
+.login-icon {
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: -60px;
+}
+.login-icon .icon-img {
+	background: #202d49 none repeat scroll 0 0;
+	border-radius: 100px;
+	display: inline-block;
+	height: 130px;
+	overflow: hidden;
+	padding: 10px;
+	width: 130px;
+	border: 2px solid #44609b;
+}
+.login-icon .icon-img .icon-inner {
+	background: rgba(0, 0, 0, 0) url("../images/user-1.png") no-repeat scroll center center;
+	display: inline-block;
+	height: 134px;
+	overflow: hidden;
+	vertical-align: middle;
+	width: 134px;
+}
+.login-form {
+	width: 100%;
+	float: left;
+	padding: 0px 39px;
+}
+.login-form h2 {
+  color: #fff;
+  float: left;
+  font-family: "ubunturegular";
+  font-size: 27px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  margin-top: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
+.login-form p {
+	width: 100%;
+	float: left;
+	text-align: center;
+	color: #413c52;
+	margin-bottom: 23px;
+	font-size: 14px;
+}
+.full-block {
+	width: 100%;
+	float: left;
+	position: relative;
+}
+.input-block {
+	width: 100%;
+	float: left;
+	margin-bottom: 16px;
+}
+.login-form .input-block input {
+	width: 100%;
+	float: left;
+	height: 50px;
+	border: 1px solid #44609b;
+	border-radius: 5px;
+	padding: 0px 10px 0px 50px;
+	font-size: 14px;
+	background-color: #1e2b45;
+	color: #fff;
+	font-family: 'ubunturegular';
+}
+.name-icon {
+	background: url(../../images/name-icon.png) no-repeat 15px center rgba(0,0,0,0);
+}
+.key-icon {
+	background: url(../../images/key-icon.png) no-repeat 15px center rgba(0,0,0,0);
+}
+.login-form .input-block input[type=checkbox] {
+	width: 36px;
+	float: left;
+	height: auto;
+	padding-left: 14px;
+}
+.login-form label {
+	color: #fff;
+	float: left;
+	font-family: open_sansregular;
+	font-size: 13px;
+	line-height: 13px;
+}
+.check-block {
+	padding: 1px 0px;
+}
+.login-lock {
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+.login-form .input-block input.login-btn {
+  background-color: #6a00a1;
+  
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-color: inherit;
+  border-style: none;
+  border-width: medium;
+  color: #fff;
+  float: none;
+  font-family: open_sansbold;
+  font-size: 15px;
+  height: 50px;
+  margin: 0 auto;
+    padding: 0 0 0 44px;
+    text-align: left;
+  text-transform: uppercase;
+ width: 164px;
+  background:url("../images/right-arrow.png") no-repeat scroll 85% center, rgb(68,96,155); /* Old browsers */
+background:url("../images/right-arrow.png") no-repeat scroll 85% center, -moz-linear-gradient(top, rgba(68,96,155,1) 0%, rgba(30,43,69,1) 99%); /* FF3.6-15 */
+background: url("../images/right-arrow.png") no-repeat scroll 85% center,-webkit-linear-gradient(top, rgba(68,96,155,1) 0%,rgba(30,43,69,1) 99%); /* Chrome10-25,Safari5.1-6 */
+background:url("../images/right-arrow.png") no-repeat scroll 85% center, linear-gradient(to bottom, rgba(68,96,155,1) 0%,rgba(30,43,69,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44609b', endColorstr='#1e2b45',GradientType=0 );
+ border: 1px solid #44609b;
+    border-radius: 50px;
+}
+.forgot-links {
+  background: rgba(0, 0, 0, 0) url("../images/login-pattern.png") repeat scroll left top;
+  float: left;
+  margin-top: 13px;
+  padding: 15px 39px;
+  width: 100%;
+}
+.forgot-links a {
+	font-size: 15px;
+	color: #fff;
+	float: left;
+	font-family: 'open_sansregular';
+}
+.forgot-links a{
+  text-align: center;
+  width: 100%;
+}
+.check-block .radio-block label::before {
+	background: rgba(0, 0, 0, 0) url("../images/check-1.png") no-repeat scroll left top;
+	border-radius: 0 !important;
+}
+.check-block .radio-block label {
+	margin-top: 0px;
+	line-height: 19px;
+}
+.check-block .radio-block input[type=checkbox]:checked + label::before {
+	background: rgba(0, 0, 0, 0) url("../images/check-2.png") no-repeat scroll left top;
+}
+.check-block a {
+  float: right;
+  font-size: 13px;
+  color: #45619d;
+   font-family: 'open_sansregular';
+   line-height: 22px;
+
+}
+input[type="checkbox"], .radio-block input[type="radio"] {
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.check-block .radio-block label::before {
+    background: rgba(0, 0, 0, 0) url("../images/check-1.png") no-repeat scroll left top;
+    border-radius: 0 !important;
+}
+.radio-block label::before {
+    border-radius: 8px;
+}
+.radio-block label::before {
+    background: rgba(0, 0, 0, 0) url("../images/radio-cir.png") no-repeat scroll left top;
+    border-radius: 50px;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    left: 0;
+    margin-right: 10px;
+    position: absolute;
+    top: 1px;
+    width: 20px;
+}
+.check-block .radio-block label {
+    line-height: 19px;
+    margin-top: 0;
+}
+.radio-block label {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 19px;
+    margin-right: 7px;
+    margin-top: 3px;
+    padding-left: 27px;
+    position: relative;
+}
+.inner-footer .footer-copy-right p {
+  color: #fff;
+  font-size:14px;
+  font-family: 'ubunturegular';
+   padding: 13px 0;
+}
+
+.inner-footer .footer-copy-right p {
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+}
+/***************login end**************/
+/***************register start*************/
+
+.login-page-inner {
+    float: left;
+    margin-top: 140px;
+    width: 100%;   margin-bottom: 48px;
+}
+.wrapper2{
+	width:770px;
+	margin:0 auto;
+}
+.reg-page{
+	 color: #fff;
+  font-size:27px;
+  font-family: 'ubunturegular';
+ 
+}
+.reg-head {
+  display: block;
+  text-align: center;
+  width: 100%;
+  
+}
+.reg-page img {
+  display: inline-block;
+  vertical-align: middle;
+    margin-right: 15px;
+}
+.reg-para{
+	font-family: 'ubuntulight';
+	font-size:20px;
+	color:#fff;
+	line-height:28px;	
+	margin-top: 23px;text-align:center;
+}
+
+
+
+ .payment-login-block {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.payment-inner-login.billing-information-payment {
+   background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    border: 1px solid #44609b;
+    border-radius: 5px;
+    float: left;
+    max-width: 100%;
+    padding: 34px 27px;
+}
+.payment-login-block .payment-inner-login {
+    background: #f7f7f7 none repeat scroll 0 0;
+    display: inline-block;
+    max-width: 500px;
+    padding: 36px 68px;
+    text-align: left;
+    width: 100%;
+}
+.full-block-studio {
+  float: left;
+  width: 100%;
+}
+
+.billing-information-payment .left-block-studio {
+    width: 48%;
+}
+.left-block-studio {
+    float: left;
+    width: 337px;
+}
+
+.payment-login-block .input-block-studio {
+    margin-bottom: 16px;
+}
+.input-block-studio {
+    float: left;
+    margin-bottom: 19px;
+    width: 100%;
+}
+.img-input-block {
+    float: left;
+    left: 0;
+    position: relative;
+    width: 100%;
+}
+
+.payment-login-block .payment-inner-login input {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d6d6d6;
+    color: #000;
+}
+.block-input {
+       background: #1e2b45 none repeat scroll 0 0;
+    border: 1px solid #44609b;
+    border-radius: 5px;
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    height: 49px;
+    padding-left: 44px;
+    width: 100%;
+    font-family: "ubunturegular";
+}
+.txtarea-new .block-input {
+       background: #1e2b45 none repeat scroll 0 0;
+    border: 1px solid #44609b;
+    border-radius: 5px;
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    height: 82px;
+    padding-left: 44px;
+    width: 100%;
+    font-family: "ubunturegular";padding:10px 10px 10px 44px;
+}
+.img-input-block.txtarea-new img{bottom:auto;top:10px;}
+
+.left-block-studio.right {
+    float: right;
+}
+.img-input-block img {
+    bottom: 0;
+    float: left;
+    left: 17px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+
+
+.register-steps {
+    float: left;
+    width: 100%;margin:36px 0px 25px;
+}
+.register-steps ul {width:100%;float:left;}
+.register-steps li{width:25%;float:left;text-align:center;position:relative;}
+
+.register-steps li::before {
+    background: rgba(0, 0, 0, 0) url("../images/w-arr-li.png") no-repeat scroll left center /100%;
+    bottom: 0;
+    content: "";
+    height: 28px;
+    left: 83%;
+    margin: auto;
+    max-width: 143px;
+    position: absolute;
+    top: 0;
+     width: 35%;
+    z-index: 1;
+}
+.register-steps li:last-child::before{display:none;}
+.register-steps li .block-stp-reg {
+  width: 114px ;
+  height: 114px;
+  border: 2px solid #fff;
+  text-align:center;
+  border-radius: 100px;
+ 
+  padding: 13px 0px;
+ display:inline-block;
+}
+.register-steps li.active .block-stp-reg ,.register-steps li:hover .block-stp-reg {
+ background:#45619d;
+}
+.register-steps h1 {
+  color: #fff;
+  font-family: "ubunturegular";
+  font-size: 15px;
+  line-height: 18px;line-height: 18px;
+}
+ .register-steps span {
+ color: #fff;
+  font-size: 18px;
+   font-family: "ubunturegular";font-family: 'ubuntubold';
+ }
+.block-stp-reg-tb{width:100%;height:100%;display: table;}
+.block-stp-reg-cell{width:100%;height:100%;display: table-cell;vertical-align:middle;}
+.step-heading{width:100%;margin-bottom:15px; font-size:18px; color:#fff;font-family: "ubunturegular";text-align:left;display:none}
+/***************register end**************/
+.reg-btn {
+   float: left;
+    margin-top: 5px;
+    
+    width: 100%;
+}
+.login-btn {
+  background: rgba(0, 0, 0, 0) url("../images/next-bg.png") no-repeat scroll center center / cover ;
+  border: 0 none;
+  color: #fff;
+  font-family: "ubunturegular";
+  font-size: 15px;
+  height: 37px;
+  padding-left: 28px;
+  text-align: left;
+  width: 102px;
+  float: right;
+}
+/***************register end**************/
+/***************register2 start**************/
+.register-setup .left-block-studio {
+  width: 100%;
+}
+.register-setup {
+  display: table;
+  float: none !important;
+  margin: 0 auto;
+  width: 542px;
+}
+.back-btn {
+  background: url("../images/left-arrow.png") no-repeat scroll 18% center, rgba(0, 0, 0, 0) url("../images/back-bg.png") no-repeat scroll center center / cover ;
+  border: 0 none;
+  color: #fff;
+  float: left;
+  font-family: "ubunturegular";
+  font-size: 15px;
+  height: 37px;
+  padding-right: 21px;
+  text-align: right;
+  width: 102px;
+}
+
+.full-block-studio label {
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+     font-family: "ubunturegular";
+}
+.reg-payment .block-input{
+  padding: 10px;
+}
+.two-third {
+  float: left;
+  width: 248px;
+}
+.one-half-third {
+  float: left;
+  width: 94px;
+}
+.one-half2-third {
+  float: right;
+  width: 144px;
+}
+.one1-third {
+  float: right;
+  width: 188px;
+}
+.card {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: -10px;
+}
+.info-icon {
+  float: left;
+  max-width: 100%;
+  padding-right: 37px;
+}
+.reg-payment .arrow-part{
+  cursor: pointer;
+  background:#1e2b45  url("../images/sel-arr1.png") no-repeat scroll 95% center;
+ 
+}
+.img-input-block img.info-img {
+    right: -138px;
+}
+.img-input-block img {
+    bottom: 0;
+    float: left;
+    left: 17px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+.register-setup {
+  padding: 34px 44px!important;
+}
+.product-part{
+	background:#fff;
+	min-height:102px;
+	width:100%;
+	border: 1px solid #fff;
+    border-radius: 5px;
+    float: left;
+    margin-bottom: 15px;
+      padding: 9px ;
+}
+.product-part li {
+  display: inline-block;margin-right: 10px;
+}
+/***************register2 end**************/
+#menu { display: none;}
+@media screen and (max-width:1190px){
+.wrapper{width:90%;}
+.block-3-stp1 figure::before{width:37%;background-size:100%;}
+.lap-img{width:100%;}
+.vdo-img {  width: 76%;}
+.vdo-img img {  width: 100%;}
+.lap-vdo-block img {
+    width: 100%;
+}
+
+.wrapper1{width:100%;max-width:100%;}
+.address{width:34%;}
+.links{width:24%;}
+.form-footer{width:42%;}
+header {  height: 600px;  overflow: hidden;}
+header figure img{width:auto;}
+.silde-content { bottom: 97px;}
+.silde-content h2 {font-size: 43px; line-height: 47px; margin-bottom: 28px;}
+/*************login************/
+.welcome-block{width:53%;}
+.login-block{width:41%;}
+
+.login-page header {
+    height: 116px;overflow:visible;
+}
+
+.login-form-block {
+    margin: 127px 0 55px;
+}
+/**************end*********/
+}
+@media screen and (max-width:1024px){
+.vdo-img{top:5%;}
+
+.block-3-stp1 img {
+    width: 57%;
+}
+
+
+}
+@media screen and (max-width:991px){
+.block-3-stp1 p,.choose-3-stp1 p{padding:0px;}
+.address ,.links{  width: 50%;margin-bottom:30px;}
+.form-footer{width:100%;}
+footer { margin-top: 24px; position: relative;}
+.choose-slider-block-inner{max-width:100%;}
+/***********menu*********/
+
+#nav.js {
+    display: none;
+}
+#menu {
+    color: #031651;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 37px;
+    line-height: 33px;
+    position: relative;
+    right: 0;
+    text-align: center;
+    top: 7px;
+    width: 32px;
+}
+#nav {
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  border-radius: 5px;
+  max-width: 300px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 100%;
+  z-index: 99;width: 250px;padding:0px;border-radius:5px;
+  border-top:3px solid #000;
+}
+#nav:before{top:-10px;position:absolute;right:7px;margin:auto;content:"";border-left:13px solid rgba(0,0,0,0);border-right:13px solid rgba(0,0,0,0);border-bottom:13px solid #000;}
+.right-div nav ul li {
+  width: 100%;margin:0px;
+}
+.right-div nav ul li a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  text-align: left;
+  width: 100%;padding: 8px 10px;
+}
+.right-div nav ul li a:before{display:none;}
+.right-div nav ul li:hover a, .right-div nav ul li.active a {
+  background: #45619D none repeat scroll 0 0;
+}
+
+.right-div nav ul li:first-child a {
+    border-radius: 5px 5px 0 0;
+}
+.right-div nav ul li:last-child a {
+    border-radius: 0 0 5px 5px ;border:none;
+}
+nav{position:relative;}
+.header-outer{padding:18px 0px;}
+/***********menu*********/
+/*************login************/
+.welcome-block {
+display: none;
+}
+.login-block{  
+   width: 100%;
+}
+
+/**************end*********/
+/**************register********/
+.wrapper2{width:94%}
+.register-steps li .block-stp-reg{width:86px;height:86px;}
+.register-steps h1{font-size:11px;line-height:14px;}
+.register-steps li::before{width:38%;}
+/**************register end********/
+}
+@media screen and (max-width:767px){
+.block-3-stp1,.choose-3-stp1 {float: left;margin-bottom: 40px; width: 100%;}
+.block-3-stp1:last-child ,.choose-3-stp1:last-child{margin-bottom:0px;}
+.block-3-stp1 img {max-width: 234px; width: 57%;}
+.block-3-stp1 figure::before{display:none;}
+footer p{width:100%;max-width:100%;}
+footer{width:100%;}
+}
+@media screen and (max-width:640px){
+.silde-content h2 {font-size: 35px; line-height: 40px; margin-bottom: 20px;}
+.address ,.links{  width: 100%;}
+.header-btn{display:none;}
+
+.logo-heading {
+    background-image: none;
+    float: left;
+    height: auto;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.logo-heading h2 span {
+    display: inline;
+}
+.logos-block{height:auto;}
+.log0-slide{padding:0px;}
+.log0-slide-inner a{margin:1%;}
+/**************register********/
+.register-steps li::before{display: none;}
+/**************register end********/
+/***************register**********/
+.register-setup {
+    padding: 34px 21px !important;
+}
+
+.two-third {
+    float: left;
+    width: 100%;
+}
+.one-half-third{width:40%;}
+.one-half2-third{width:55%;}
+.one1-third {  float: right; width: 100%;}
+
+.img-input-block img.info-img {
+    left: 37px;
+}
+.card {
+    left: 0;
+    position: absolute;
+    top: 49px;
+}
+/***************register**********/
+}
+@media screen and (max-width:550px){
+/**************register********/
+.block-stp-reg-cell h1{display: none;}
+.register-steps li .block-stp-reg {
+    height: 55px;  width: 55px;
+}
+.register-steps li::before{display: block;}
+.step-heading{display:block;}
+/**************register end********/
+}
+@media screen and (max-width:480px){
+.silde-content h2 {font-size: 25px; line-height: 30px; margin-bottom: 20px;}
+
+.how-to-shop .how-to-shop-btn {
+    font-size: 15px;
+    padding-left: 30px;
+    width: 271px;
+}
+.choose-us-div {
+    margin-top: -102px;
+    padding: 140px 0 50px;
+}
+/*************login************/
+.check-block a {
+   font-size: 12px;
+  
+}
+.radio-block label {
+   font-size: 11px;
+    margin-right: 0;
+    padding-left: 23px;
+
+}
+.billing-information-payment .left-block-studio {
+    width: 100%;
+}
+.reg-para {
+    font-size: 16px;
+    line-height: 26px;
+}
+/**************end*********/
+/***************register**********/
+.register-setup {
+    padding: 34px 21px !important;
+}
+/***************register**********/
+}
+
+@media screen and (max-width:420px){
+/**************register********/
+.block-stp-reg-cell h1{display: none;}
+.register-steps li .block-stp-reg {
+    height: 45px;  width: 45px;padding: 10px 4px;
+}
+
+.register-steps li::before{display: block;}
+/**************register end********/
+}
