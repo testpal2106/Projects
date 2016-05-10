@@ -1160,6 +1160,8 @@ input[type="checkbox"], .radio-block input[type="radio"] {
 }
 /***************register2 end**************/
 #menu { display: none;}
+input.error_input{border:red;background:#AA4463;}
+span.error_input{color:red;}
 @media screen and (max-width:1190px){
 .wrapper{width:90%;}
 .block-3-stp1 figure::before{width:37%;background-size:100%;}
