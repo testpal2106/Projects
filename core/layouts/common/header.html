@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>index</title>
+</head>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<link href="assets/css/animate.css" rel="stylesheet" type="text/css">
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<body class="login-page">
+	<header>	
+		<div class="header-outer">	
+			<div class="wrapper">		
+				<div class="logo"> <img src="assets/images/logo.png"> </div>
+				<div class="right-div">	
+					<nav>
+						<div id="menu"><img src="assets/images/menu.png"></div><ul id="nav" class="js">
+							<li class="active"> <a href="#" class="active"> Home  </a> </li>
+							<li> <a href="#">  About Us </a> </li>
+							<li> <a href="#"> Features </a> </li>
+							<li> <a href="#"> Contact Us </a> </li>
+						</ul>
+						<script type="text/javascript">
+							jQuery("i").click(function(){
+							  jQuery(".dropdown-1").slideToggle();
+							  });
+						</script>
+						
+						<script type="text/javascript">
+						  jQuery("#nav").addClass("js").before('<div id="menu"><img src="assets/images/menu.png"/></div>');
+						  jQuery("#menu").click(function(){
+						  jQuery("#nav").slideToggle();
+						  });
+						  jQuery(window).resize(function(){
+						  if(window.innerWidth > 990) {
+						  jQuery("#nav").removeAttr("style");
+						  }
+						  });
+							jQuery(document).ready(function(){
+								jQuery(".slidesjs-pagination-item li").each( function(){
+									jQuery(this).addClass("abc");
+								});
+							});
+						</script>
+					</nav>					
+					<div class="header-btn">
+						<a href="#"> Log In </a>
+						<a class="active" href="#"> Sign Up </a>
+					</div>
+				</div>	
+			</div>		
+		</div>
+	</header>
