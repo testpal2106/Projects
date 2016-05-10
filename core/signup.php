@@ -1,4 +1,5 @@
 <?php
+echo 'test';
 session_start(); 
 
 include ('includes/common/common.php');
