@@ -13,7 +13,6 @@ if(isset($_POST['signup_btn']) &&!empty($_POST['signup_btn'])){
 }
 
 
-
 include( LAYOUT_PATH . 'common/header.html'); 
 include( LAYOUT_PATH . 'signup.html');
 include( LAYOUT_PATH . 'common/footer.html');
