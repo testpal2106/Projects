@@ -1,28 +1,6 @@
 $(document).ready(function(){
 	signupValidate();
 	
-	var credit_card = '';
-	var credit_card_pseudo = '';
-	var credit_card_actual = '';
-	
-	$('#credit_card').keyup(function(e){
-		
-		var credit_card_key = String.fromCharCode( e.which );
-		
-		credit_card += credit_card_key;				
-			
-		if(credit_card.length <= 12){
-			credit_card_pseudo += credit_card_key.replace(/\d/, 'x');
-			credit_card_actual += credit_card_key;
-		}else if(credit_card.length <= 16){
-			credit_card_pseudo += credit_card_key;
-			credit_card_actual += credit_card_key;
-		}
-	
-		$('#credit_card').val(credit_card_pseudo);
-		$('#credit_card_actual').val(credit_card_actual);
-			
-	});
 });
 
 /*
