@@ -777,7 +777,7 @@ img {
     border: 2px solid rgb(0, 0, 0) !important;
     border-radius: 5px;
     color: #000;
-    cursor: pointer;
+   
     display: inline-block;
     float: left;
     font-size: 14px;
@@ -2993,6 +2993,14 @@ table.table-condensed tbody tr td {
 .edit_plan .inputbox-main {
   width: 82%;
 }
+.common-error{
+ color: #ff0000;
+ font-size:14px;
+ width:100%;
+ float:left;
+ 
+}
+
 /****** edit plan end *********/
 @media screen and (max-width:1100px){
 

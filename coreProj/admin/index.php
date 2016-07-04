@@ -8,11 +8,6 @@ if($_SESSION['is_logged_in'] === '1') {
 
 if(isset($_POST['login_btn']) && !empty($_POST['login_btn'])){
 	$resp = $app->login();
-	if($resp){
-		header('location: dashboard.php');
-	}else{
-		header('location: index.php');
-	}
 }
 
 ?>
@@ -49,9 +44,9 @@ if(isset($_POST['login_btn']) && !empty($_POST['login_btn'])){
 			<div class="login-box">
 				<h2><img src="assets/images/login_icon.png"/><div class="login_title"><span>HELPU</span><p>Admin Panel</p></div></h2>
 				<fieldset id="personal">
-					<legend style="margin-left: 0; padding-left: 8px; text-align: center; width: 100%">
-						<?php if(isset($_SESSION['error'])){ echo $_SESSION['error']; } ?>
-					</legend>
+						<?php if(isset($_SESSION['error'])){ 
+							echo ' <div class="red-left" style="border:0px;"> <span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>'.$_SESSION['error'].'</div>'; } ?>
+					
 					
 					
 					<div class="input-prepend">      

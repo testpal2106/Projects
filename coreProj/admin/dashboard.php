@@ -1,10 +1,5 @@
 <?php
-
-	if($_SESSION['is_logged_in'] === '1') {
-	   header("Location: dashboard.php");
-	   exit;
-	}
-
+	
 	include('header.php'); 
 
 ?>
