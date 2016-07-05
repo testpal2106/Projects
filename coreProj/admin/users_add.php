@@ -1,6 +1,85 @@
-<?php include('header.php'); 
-$countries = $app->get_countries();
-$roles = $app->get_roles();
+<?php 
+
+include('header.php'); 
+$app->tablename = 'countries';
+$countries = $app->find();
+
+$app->tablename = 'roles';
+$roles =  $app->find();
+
+if(isset($_POST['submit_btn']) && !empty($_POST['submit_btn'])){
+	
+	$userNameErr = $firstNameErr = $lastNameErr = $emailErr = $phoneErr = $addressErr = $countryErr = ''; 
+	$countErr = 0;
+	if(!empty($_POST['username'])){
+		$count++;
+		$userNameErr = 'Please enter your username.';
+	}else{
+		//check if this username is unique
+	}
+	if(!empty($_POST['firstname'])){
+		$count++;
+		$firstNameErr = 'Please enter your first name.';
+	}
+	if(!empty($_POST['lastname'])){
+		$count++;
+		$lastNameErr = 'Please enter your last name.';
+	}
+	
+	if(!empty($_POST['email'])){
+		$count++;
+		$emailErr = 'Please enter your email address.';
+	}else{
+		if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+			$emailErr = 'Please enter valid email address.';
+		}else{
+			//check if this email is unique
+		}		
+	}
+	
+	if(!empty($_POST['phone'])){
+		$count++;
+		$phoneErr = 'Please enter your phone.';
+	}
+	if(!empty($_POST['address'])){
+		$count++;
+		$addressErr = 'Please enter your address.';
+	}
+	if(!empty($_POST['city'])){
+		$count++;
+		$cityErr = 'Please enter your city.';
+	}
+	if(!empty($_POST['state'])){
+		$count++;
+		$stateErr = 'Please enter your state.';
+	}
+	
+	if(!empty($_POST['country'])){
+		$count++;
+		$countryErr = 'Please select your country.';
+	}
+	if($countErr > 0){
+		$errorMsg = 'Please fill all the required fields.';
+	}else{
+		
+			
+		$data['username'] = $_POST['username'];
+		$data['firstname'] = $_POST['firstname'];
+		$data['lastname'] = $_POST['lastname'];
+		$data['email'] = $_POST['email'];
+		$data['password'] = $_POST['password'];
+		$data['address'] = $_POST['address'];
+		$data['city'] = $_POST['city'];
+		$data['state'] = $_POST['state'];
+		$data['country'] = $_POST['country'];
+		$data['phone'] = $_POST['phone'];
+		
+		$app->tablename = 'users';
+		$res =  $app->add($data);
+	}
+	
+	
+}
 
 
 ?>
@@ -14,30 +93,27 @@ $roles = $app->get_roles();
 					<!-- Main Content Starts Here -->
 					<div id="content">
 						<div id="message-red" style="display:none">
-								<table cellspacing="0" cellpadding="0" style="width:100%;border:0px;">
-								<tr>
-									<td class="red-left" style="border:0px;">
-										<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
-										Message</td>
-								</tr>
-								</table>
-							</div>
+							<table cellspacing="0" cellpadding="0" style="width:100%;border:0px;">
+							<tr>
+								<td class="red-left" style="border:0px;">
+									<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
+									Message</td>
+							</tr>
+							</table>
+						</div>
 						<div id="message-green" style="display:none;">
-								<table cellspacing="0" cellpadding="0" style="width:100%;border:0px;">
-									<tbody>
-										<tr>
-											<td style="border:0px;" class="green-left">
-												<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
-												Message
-											</td>
-											
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-
-
+							<table cellspacing="0" cellpadding="0" style="width:100%;border:0px;">
+								<tbody>
+									<tr>
+										<td style="border:0px;" class="green-left">
+											<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
+											Message
+										</td>
+										
+									</tr>
+								</tbody>
+							</table>
+						</div>
 
 	<div class="account-right-div">
 		<div class="dashboard-heading">
@@ -213,7 +289,7 @@ $roles = $app->get_roles();
 						<div class="full">
 							<div class="input-block add-user-btn">
 								<span class="">
-									<input type="submit" class="btn-submit btn" value="Submit">
+									<input type="submit" class="btn-submit btn" name="submit_btn" value="Submit">
 									<a class="btn-submit btn" href="http://localhost/helpu/admin/owners">Cancel</a>							
 								 </span>
 							</div>

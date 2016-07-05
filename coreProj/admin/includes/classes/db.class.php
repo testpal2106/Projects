@@ -60,5 +60,41 @@ Class Db{
 
 	}
 	
+	public function execute($thequery){
+			if (!$this->db->query ($thequery)){
+				$exceptionstring = "Error performing query: $thequery: <br />";
+				$exceptionstring .= $this->db->errno . ": " . $this->db->error;
+				throw new exception ($exceptionstring);
+			} else {
+				return $this->db->insert_id;
+				/*echo "Query performed correctly: " . $this->db->affected_rows . ".
+				row(s) affected.<br />";*/
+			}
+	}
+	
+	 //Function to return a row set.
+    public function getrows ($thequery){
+		if ($result = $this->db->query ($thequery)){
+			$returnarr = array ();
+			while ($adata = $result->fetch_array ()){
+				$returnarr[] = $adata;
+			}
+			if(count($returnarr) > 0) {
+				return $returnarr;
+			}
+		} else {
+			$exceptionstring = "Error performing query: $thequery: <br />";
+			$exceptionstring .= $this->db->errno . ": " . $this->db->error;
+			throw new exception ($exceptionstring);
+		}
+    }
+    
+     public function escape($str) {
+       return addslashes($str);
+    }
+
+
+
+	
 }
 

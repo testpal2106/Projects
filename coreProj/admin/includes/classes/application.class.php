@@ -2,7 +2,7 @@
 include "db.class.php";
 
 Class Application extends Db{
-	public $table;
+	public $tablename;
 	
 	public function __construct(){	
 		parent::__construct('localhost', 'root', 'root', 'coreProj');
@@ -55,29 +55,128 @@ Class Application extends Db{
 			 return false;
 		}
 	}
-	
+	/*
 	public function find($qry){	
 		 $res = $this->get_results($qry);		
 		 if(!empty($res)){
 			return $res; 
 		 }
 	}
+	*/
+	  /*
+     * method used for SELECT query operations
+     */
+
+    public function find($select = array('*'), $params = array('conditions' => array(), 'sort' => '', 'limit' => '', 'group' => '')) {
+
+        $where_condition = array();
+        $sort_order = '';
+        $limit = '';
+        $group_by = '';
+        $params['conditions'] = (count($params['conditions']) > 0) ? $params['conditions'] : array('1 = ' => '1');
+
+        foreach ($params['conditions'] as $k => $v ) $where_condition[] = "$k '".$this->escape(trim($v))."'";
+
+        if(!empty($params['sort'])) {
+            $sort_order .= 'ORDER BY ' . $params['sort'];
+        }
+
+        if(!empty($params['limit'])) {
+            $limit .= 'LIMIT ' . $params['limit'];
+        }
+
+        if(!empty($params['group'])) {
+            $group_by .= 'GROUP BY ' . $params['group'];
+        }
+ 
+         $result_array = $this->getrows('SELECT '
+                        .implode(', ', $select).'
+                        FROM
+                        '.$this->tablename.'
+                        WHERE
+                        '.implode(' AND ', $where_condition)
+                        .' '.$sort_order
+                        .' '.$limit
+                        .' '.$group_by
+         );
+        return $result_array;
+    }
+
+    /*
+     * method used for COUNT() query operations
+     */
+
+   public function find_count($params = array('conditions' => array())) {
+
+        $where_condition = array();
+        $params['conditions'] = (count($params['conditions']) > 0) ? $params['conditions'] : array('1 = ' => '1');
+        foreach ($params['conditions'] as $k => $v ) $where_condition[] = "$k '".$this->escape(trim($v))."'";
+
+        $result_array = $this->getrows('SELECT COUNT(id) AS count FROM '
+                        .$this->access_table.'
+                        WHERE
+                        '.implode(' AND ', $where_condition)
+                       );
+        return $result_array[0]['count'];
+    } 
+	   
 	
-	public function get_countries(){	
-		 $res = $this->find('select * from countries');		
-		 if(!empty($res)){
-			return $res; 
-		 }
-	}
+
+    /*
+     * method used to INSERT records into database
+     */
+
+    public function add($data) {
+
+
+        foreach ($data as $k => $v ) {
+            if(strpos($k, 'password') !== false) {
+                $v = $this->encrypt_password(trim($v));
+            }
+            $data[$k] = "'".$this->escape(trim($v))."'";
+        }
+ 
+        $this->execute("INSERT INTO
+                        ".$this->access_table."
+                        (`".implode('`, `', array_keys($data))."`)
+                        VALUES (".implode(", ", $data).")");
+    }
+
+    /*
+     * method used to UPDATE records in the database
+     */
+
+     public function save($data, $where = array(1 => 1)) {
 	
-	public function get_roles(){	
-		 $roles = $this->find('select * from roles');		
-		 if(!empty($roles)){
-			return $roles; 
-		 }
-	}
-	
-	
+        foreach ($data as $k => $v ) {
+            if(strpos($k, 'password') !== false) {
+                $v = $this->encrypt_password(trim($v));
+            }
+            $update_data[] = "$k = '".$this->escape(trim($v))."'";
+        }
+
+        foreach ($where as $k => $v ) $where_condition[] = "$k '".$this->escape($v)."'";
+ 
+
+        $this->execute("UPDATE  ".$this->access_table." SET
+                       ".implode(', ', $update_data)." WHERE
+                                     ".implode(' AND ', $where_condition));
+
+    }
+
+    /*
+     * method used to DELETE records from the database
+     */
+
+    public function delete($where) {
+ 
+		foreach ($where as $k => $v )  $where_condition[] = "$k IN (".$v.")";
+		
+		$this->execute("DELETE FROM ".$this->access_table." WHERE ".implode(' AND ', $where_condition)); 
+		
+    }
+
+    
      public function logout() {
 
 		if(count($_SESSION) > 0) {

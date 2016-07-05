@@ -6,8 +6,12 @@ ini_set('display_errors', 1);
 global $app;
 
 include ('classes/application.class.php');
-
 $app = new Application();
+
+include ('classes/global.class.php');
+
+
+$globalObj = new GlobalClass();
 
 
 
