@@ -3,6 +3,7 @@ include "db.class.php";
 
 Class Application extends Db{
 	public $tablename;
+	 const APPLICATION_SALT = 'fueg';
 	
 	public function __construct(){	
 		parent::__construct('localhost', 'root', 'root', 'coreProj');
@@ -67,7 +68,7 @@ Class Application extends Db{
      * method used for SELECT query operations
      */
 
-    public function find($select = array('*'), $params = array('conditions' => array(), 'sort' => '', 'limit' => '', 'group' => '')) {
+    public function find($select = array('*'), $params = array('conditions' => array(), 'sort' => '', 'operator' => 'AND', 'start' => '0','limit' => '', 'group' => '')) {
 
         $where_condition = array();
         $sort_order = '';
@@ -81,20 +82,25 @@ Class Application extends Db{
             $sort_order .= 'ORDER BY ' . $params['sort'];
         }
 
+        if(!empty($params['operator'])) {
+            $operator = $params['operator'];
+        }
+
         if(!empty($params['limit'])) {
-            $limit .= 'LIMIT ' . $params['limit'];
+            $limit .= 'LIMIT ' . $params['start'] .', ' .$params['limit'];
         }
 
         if(!empty($params['group'])) {
             $group_by .= 'GROUP BY ' . $params['group'];
         }
+        
  
          $result_array = $this->getrows('SELECT '
                         .implode(', ', $select).'
                         FROM
                         '.$this->tablename.'
                         WHERE
-                        '.implode(' AND ', $where_condition)
+                        '.implode(' '.$operator.' ', $where_condition)
                         .' '.$sort_order
                         .' '.$limit
                         .' '.$group_by
@@ -106,16 +112,16 @@ Class Application extends Db{
      * method used for COUNT() query operations
      */
 
-   public function find_count($params = array('conditions' => array())) {
+   public function find_count($params = array('conditions' => array(), 'operator'=>'AND')) {
 
         $where_condition = array();
         $params['conditions'] = (count($params['conditions']) > 0) ? $params['conditions'] : array('1 = ' => '1');
         foreach ($params['conditions'] as $k => $v ) $where_condition[] = "$k '".$this->escape(trim($v))."'";
 
         $result_array = $this->getrows('SELECT COUNT(id) AS count FROM '
-                        .$this->access_table.'
+                        .$this->tablename.'
                         WHERE
-                        '.implode(' AND ', $where_condition)
+                        '.implode(' '.$operator.' ', $where_condition)
                        );
         return $result_array[0]['count'];
     } 
@@ -136,10 +142,11 @@ Class Application extends Db{
             $data[$k] = "'".$this->escape(trim($v))."'";
         }
  
-        $this->execute("INSERT INTO
-                        ".$this->access_table."
+        return $this->execute("INSERT INTO
+                        ".$this->tablename."
                         (`".implode('`, `', array_keys($data))."`)
                         VALUES (".implode(", ", $data).")");
+                        
     }
 
     /*
@@ -158,7 +165,7 @@ Class Application extends Db{
         foreach ($where as $k => $v ) $where_condition[] = "$k '".$this->escape($v)."'";
  
 
-        $this->execute("UPDATE  ".$this->access_table." SET
+        $this->execute("UPDATE  ".$this->tablename." SET
                        ".implode(', ', $update_data)." WHERE
                                      ".implode(' AND ', $where_condition));
 
@@ -172,7 +179,7 @@ Class Application extends Db{
  
 		foreach ($where as $k => $v )  $where_condition[] = "$k IN (".$v.")";
 		
-		$this->execute("DELETE FROM ".$this->access_table." WHERE ".implode(' AND ', $where_condition)); 
+		$this->execute("DELETE FROM ".$this->tablename." WHERE ".implode(' AND ', $where_condition)); 
 		
     }
 
@@ -188,6 +195,26 @@ Class Application extends Db{
 		}	
 		 
     }
+    
+     /*
+     * method used to encrypt passwords
+     */
+
+     public function encrypt_password($password) { 
+ 
+        return base64_encode($password . '-' . self::APPLICATION_SALT);
+    }
+
+    /*
+     * method used to decrypt passwords
+     */
+
+    public function decrypt_password($password) {
+        $decode_password = explode("-", base64_decode($password));
+        return $decode_password[0];
+    }
+ 
+
 	
 	
 }

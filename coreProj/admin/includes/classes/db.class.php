@@ -76,7 +76,7 @@ Class Db{
     public function getrows ($thequery){
 		if ($result = $this->db->query ($thequery)){
 			$returnarr = array ();
-			while ($adata = $result->fetch_array ()){
+			while ($adata = $result->fetch_assoc ()){
 				$returnarr[] = $adata;
 			}
 			if(count($returnarr) > 0) {
