@@ -113,6 +113,56 @@ var validateAddUser = function(){
 	});
 }
 
+var validateEditUser = function(){
+	$('#edit_user').validate({
+		errorClass:'error-ms',
+		errorElement:'span',
+		rules:{
+			'username':{required:true},
+			'firstname':{required:true},
+			'lastname':{required:true},
+			'email':{
+				required:true,
+				email:true,
+				
+			 },
+			
+			'phone':{
+				required:true,
+				number:true,				
+			 },
+			'address':{required:true},
+			'city':{required:true},
+			'country':{required:true},
+			'state':{required:true},
+			
+		},
+		messages:{
+			'username':{required:'Please enter username.'},
+			'firstname':{required:'Please enter firstname.'},
+			'lastname':{required: 'Please enter lastname.'},
+			'email':{
+				required:'Please enter email address',
+				email:'Please enter valid email.',
+				
+			 },
+			'phone':{
+				required:'Please enter phone number.',
+				number:'Please enter digits only.',				
+			 },
+			'address':{required:'Please enter address.'},
+			'city':{required:'Please enter city.'},
+			'country':{required:'Please select your country.'},
+			'state':{required:'Please select state.'},
+			
+		},
+		submitHandler:function(form){
+			form.submit();
+		}
+		
+	});
+}
+
 function sendAjaxRequest(data, action){
 		var current_request = 
 		$.ajax({

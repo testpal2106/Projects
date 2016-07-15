@@ -23,20 +23,25 @@ Class Application extends Db{
 					$qry = "select * from users where email = '".$email."'";
 					
 					$res = $this->get_results($qry);
-					
+				
 					if(count($res) > 0){
-						foreach($res as $row){							
-							if($row['password'] == $password){
+						foreach($res as $row){			
+						
+							if($row['role_id'] == '1'){
+								if($row['password'] == $this->encrypt_password($password)){
+									
+									$_SESSION['user_id'] = $row['id'];
+									$_SESSION['email'] = $row['email'];
+									$_SESSION['username'] = $row['username'];
+									$_SESSION['is_logged_in'] = 1;
 								
-								$_SESSION['user_id'] = $row['id'];
-								$_SESSION['email'] = $row['email'];
-								$_SESSION['username'] = $row['username'];
-								$_SESSION['is_logged_in'] = 1;
-							
-								header('location: dashboard.php');
-								//return true;
+									header('location: dashboard.php');
+									//return true;
+								}else{
+									  $_SESSION['error'] = "Please enter correct password for ".$email.".";
+								}
 							}else{
-								  $_SESSION['error'] = "Please enter correct password for ".$email.".";
+								 $_SESSION['error'] = "You are not authorized to view the dashboard.";
 							}	
 						}
 					 }else{
@@ -165,7 +170,7 @@ Class Application extends Db{
         foreach ($where as $k => $v ) $where_condition[] = "$k '".$this->escape($v)."'";
  
 
-        $this->execute("UPDATE  ".$this->tablename." SET
+       return  $this->execute("UPDATE  ".$this->tablename." SET
                        ".implode(', ', $update_data)." WHERE
                                      ".implode(' AND ', $where_condition));
 

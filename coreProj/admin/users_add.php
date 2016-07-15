@@ -8,12 +8,8 @@ $app->tablename = 'roles';
 $roles =  $app->find();
 
 $user_id = isset($_REQUEST['id']) ? $_REQUEST['id'] : ''; 
+$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : ''; 
 
-if(!empty($user_id)){
-	$app->tablename = 'users';
-	$edit_user_details =  $app->find(array('*'), array('conditions' => array('id=' => $user_id) ));
-	
-}
 
 if(isset($_POST['submit_btn']) && !empty($_POST['submit_btn'])){
 	
@@ -23,15 +19,17 @@ if(isset($_POST['submit_btn']) && !empty($_POST['submit_btn'])){
 		$countErr++;
 		$userNameErr = 'Please enter your username.';
 	}else{
-			//check if this username is unique
-			$app->tablename = 'users';
-			$params = array('conditions' => array( 'username=' => $_POST['username'] )	);
-			
-			$selectFields = array('*');
-			$rec=  $app->find($selectFields, $params);
-			if(count($rec) > 0){
-				$countErr++;
-				$error .= $userNameErr = 'This username already exists. Please try again.';
+			if(empty($user_id)){
+				//check if this username is unique
+				$app->tablename = 'users';
+				$params = array('conditions' => array( 'username=' => $_POST['username'] )	);
+				
+				$selectFields = array('*');
+				$rec=  $app->find($selectFields, $params);
+				if(count($rec) > 0){
+					$countErr++;
+					$error .= $userNameErr = 'This username already exists. Please try again.';
+				}
 			}
 	}
 	if(empty($_POST['firstname'])){
@@ -51,29 +49,32 @@ if(isset($_POST['submit_btn']) && !empty($_POST['submit_btn'])){
 			$countErr++;
 			$error .= $emailErr = 'Please enter valid email address.';
 		}else{
-			//check if this email is unique
-			$app->tablename = 'users';
-			$params = array('conditions' => array( 'email=' => $_POST['email'] )	);
-			
-			$selectFields = array('*');
-			$rec=  $app->find($selectFields, $params);
-			if(count($rec) > 0){
-				$countErr++;
-				$error .= $emailErr = 'This email address already exists. Please try again.';
+			if(empty($user_id)){
+				//check if this email is unique
+				$app->tablename = 'users';
+				$params = array('conditions' => array( 'email=' => $_POST['email'] )	);
+				
+				$selectFields = array('*');
+				$rec=  $app->find($selectFields, $params);
+				if(count($rec) > 0){
+					$countErr++;
+					$error .= $emailErr = 'This email address already exists. Please try again.';
+				}
 			}
 		}		
 	}
 	
-	if(empty($_POST['password'])){
+	if(!isset($_REQUEST['id']) && empty($_POST['password'])){
 		$countErr++;
 		$error .= $passwordErr = 'Please enter your password.';
 	}
-	if(empty($_POST['confirm_password'])){
+	
+	if(!isset($_REQUEST['id']) && empty($_POST['confirm_password'])){
 		$countErr++;
 		$error .= $confirm_passwordErr = 'Please confirm your password.';
 	}
 	
-	if(!empty($_POST['password']) && !empty($_POST['confirm_password']) && $_POST['password'] != $_POST['confirm_password'] ){
+	if(!isset($_REQUEST['id']) && !empty($_POST['password']) && !empty($_POST['confirm_password']) && $_POST['password'] != $_POST['confirm_password'] ){
 		$countErr++;
 		$error .= $confirm_passwordErr = 'Both passwords do not match.';
 	}
@@ -89,7 +90,7 @@ if(isset($_POST['submit_btn']) && !empty($_POST['submit_btn'])){
 		$countErr++;
 		$error .= $cityErr = 'Please enter your city.';
 	}
-	if(empty($_POST['state'])){
+	if(!isset($_REQUEST['id']) && empty($_POST['state'])){
 		$countErr++;
 		$error .= $stateErr = 'Please select your state.';
 	}
@@ -127,14 +128,26 @@ if(isset($_POST['submit_btn']) && !empty($_POST['submit_btn'])){
 		$data['date_added'] = date('y-m-d');
 		
 		$app->tablename = 'users';
-		$res = $app->add($data);
-		
-		if(!empty($res)){
-			$success="You have successfully added a new user";
-			header('location:http://localhost/gitProjects/coreProj/admin/users_add.php?status=success');
+		if(!empty($user_id)){
+			$where = array('id=' => $user_id);
+			$res = $app->save($data, $where);
+			if(empty($res)){
+				$success="You have successfully added a new user";
+				header('location:http://localhost/gitProjects/coreProj/admin/users_add.php?action=edit&id='.$user_id.'status=success');
+			}else{
+				$error = "There is an error in creating new user.";
+			}
 		}else{
-			$error = "There is an error in creating new user.";
+			$res = $app->add($data);
+			if(!empty($res)){
+				$success="You have successfully added a new user";
+				header('location:http://localhost/gitProjects/coreProj/admin/users_add.php?status=success');
+			}else{
+				$error = "There is an error in creating new user.";
+			}
 		}
+		
+		
 	}
 }
 
@@ -144,6 +157,13 @@ if(!empty($status)){
 		$success="You have successfully added a new user";
 	}
 } 
+
+
+if(!empty($user_id)){
+	$app->tablename = 'users';
+	$edit_user_details =  $app->find(array('*'), array('conditions' => array('id=' => $user_id) ));
+	
+}
 ?>
 
 	<div class="border-div" id="border-div"></div>	
@@ -157,11 +177,12 @@ if(!empty($status)){
 						<?php if(isset($error)): ?>
 						<div id="message-red" >
 							<table cellspacing="0" cellpadding="0" style="width:100%;border:0px;">
-							<tr>
-								<td class="red-left" style="border:0px;">
-									<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
-									<?php echo $error; ?></td>
-							</tr>
+								<tr>
+									<td class="red-left" style="border:0px;">
+										<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
+										<?php echo $error; ?>
+									</td>
+								</tr>
 							</table>
 						</div>
 							<?php endif; ?>
@@ -174,7 +195,6 @@ if(!empty($status)){
 											<span class="msg_green"><i class="fa fa-times" aria-hidden="true"></i></span>
 											<?php echo $success; ?>
 										</td>
-										
 									</tr>
 								</tbody>
 							</table>
@@ -183,7 +203,7 @@ if(!empty($status)){
 
 	<div class="account-right-div">
 		<div class="dashboard-heading">
-			<h2>Add User</h2>
+			<h2><?php if(!empty($user_id)){ echo "Edit"; }else{ echo "Add"; } ?> User</h2>
 			<h5>
 				<a href="http://localhost/gitProjects/coreProj/admin/dashboard.php">Dashboard</a>		
 			</h5>
@@ -192,12 +212,14 @@ if(!empty($status)){
 				<a href="http://localhost/gitProjects/coreProj/admin/users_add.php">Users</a>			
 			</h5>
 			<span>»</span>
-			<h5>Add user</h5>
+			<h5><?php if(!empty($user_id)){ echo "Edit"; }else{ echo "Add"; } ?> user</h5>
 		</div>
 	
 		<div class="dashboard-inner">
-			<form name="add-user" id="add_user" method="post" action= "" >
+			<form name="<?php if(!empty($user_id)){ echo "edit"; }else{ echo "add"; } ?>-user" id="<?php if(!empty($user_id)){ echo "edit"; }else{ echo "add"; } ?>_user" method="post" action= "" >
 			<div class="main-dash-summry Edit-profile">
+				
+				<?php if(empty($user_id)){ ?>
 					<div class="input-row">
 						<div class="full">
 							<div class="input-block edit_page">
@@ -221,6 +243,7 @@ if(!empty($status)){
 							</div>
 						</div>
 					</div>
+					<?php } ?>
 					<div class="input-row ">
 						<div class="full">
 							<div class="input-block edit_page">
@@ -313,15 +336,24 @@ if(!empty($status)){
 										<?php 
 										if(count($countries) > 0){
 											$selected = '';
-											foreach($countries as $country){
+											foreach($countries as $country){ 	?>
+											<option value="<?php echo $country['country_id']; ?>"											
+											<?php 
+																		
+												if(isset($edit_user_details[0]['country']) && ( $edit_user_details[0]['country'] == $country['country_id'] )){
+														echo "selected = selected"; 
+												}else{									
+													if(isset($_POST['country']) &&	 ( $edit_user_details[0]['country'] == $country['country_id'] )){
+															echo "selected = selected"; 
+													}												
+												}  
 												
-												if($_POST['country'] == $country['country_id'] || ($edit_user_details[0]['city'] == $country['country_id'] )){
-													 $selected = "selected = selected";
-												}
-												echo '<option value="'.$country['country_id'].'" '. $selected .'>'.$country['country_name'].'</option>';
+											?> >
+											<?php echo $country['country_name']; ?>
+											</option>
+											<?php
 											}
 										}
-										
 										?>
 									</select>
 									<span class="error-ms"><?php if(isset($countryErr)){ echo $countryErr; } ?></span>
@@ -336,11 +368,13 @@ if(!empty($status)){
 								<label>State: <e>*</e></label>
 								<span class="reg_span">
 									<?php 
-									$state_name = GlobalClass::get_state_name($_POST['state']); ?>
+									$state_name = GlobalClass::get_state_name($_POST['state']);
+									$state_name = GlobalClass::get_state_name($edit_user_details[0]['state']); 
+									 ?>
 									<select name="state" id="state" class="inputbox-main">
 										<option value="">Select State</option>	
 										<?php
-											if( isset($_POST['state']) ){
+											if(isset($_POST['state']) || isset($edit_user_details[0]['state'])){
 												echo '<option value="'.$_POST['state'].'" selected="selected">'.$state_name.'</option>';
 											}										
 										?>									
@@ -362,11 +396,20 @@ if(!empty($status)){
 										<?php 
 											if(count($roles) > 0){
 												$selectedrole = '';
-												foreach($roles as $role){
-													if($_POST['role_id'] == $role['id']){
-														$selectedrole = "selected = selected";
-													}
-													echo '<option value="'.$role['id'].'" '. $selectedrole .'>'.$role['role_name'].'</option>';
+												foreach($roles as $role){ ?>
+												<option value="<?php echo $role['id']; ?>"											
+											<?php 															
+												if(isset($edit_user_details[0]['role_id']) && ( $edit_user_details[0]['role_id'] == $role['id'] )){
+														echo "selected = selected"; 
+												}else{									
+													if(isset($_POST['role_id']) &&	 ( $edit_user_details[0]['role_id'] == $role['id'] )){
+															echo "selected = selected"; 
+													}												
+												}  
+											?> >
+												<?php echo $role['role_name']; ?>
+											</option>
+											<?php
 												}
 											}
 										?>
@@ -383,8 +426,10 @@ if(!empty($status)){
 								<span class="reg_span">
 									<select name="status" id="status" class="inputbox-main">
 										<option value="">Select Status</option>
-										<option value="1" <?php if($_POST['status'] == '1'){ echo "selected=selected";} ?> >Active</option>
-										<option value="2"  <?php if($_POST['status'] == '2'){  echo "selected=selected";} ?> >Inactive</option>
+										
+										<option value="1" <?php if(isset($edit_user_details[0]['status']) && ($edit_user_details[0]['status'] == '1')){  echo "selected=selected"; }else if( $_POST['status'] == '1'){ echo "selected=selected";} ?> >Active</option>
+										
+										<option value="2"  <?php if(isset($edit_user_details[0]['status']) && ($edit_user_details[0]['status'] == '2')){  echo "selected=selected"; }else if( $_POST['status'] == '2'){ echo "selected=selected";} ?> >Inactive</option>
 									</select>
 									<span class="error-ms"><?php if(isset($statusErr)){ echo $statusErr; } ?></span>
 								</span>
