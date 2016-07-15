@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="libs/css/style.css">
+
+<script src="libs/js/jquery.min.js"></script>  
+<script src="libs/js/angular.min.js"></script>  
+
+<script src="libs/js/app.js"></script>  
+<body>
+<div ng-app="registerApp" ng-controller="registerCtrl">
+	<div class="register_form">
+		<div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+
+		<h2>Create Account</h2>
+		<form name="reg_form"  novalidate >
+			<div class="field-1">
+				<label>Username</label>
+				<input type="text" name= "username" ng-model="username"   ng-minlength="3" ng-maxlength="15" required />
+				<div ng-show="reg_form.$submitted || reg_form.username.$touched">					
+					 <p ng-show="reg_form.username.$error.minlength || reg_form.username.$error.maxlength">The username length must be in range 3 to 15!</p>				
+					 <p ng-show="reg_form.username.$error.required">Please enter username.</p>
+				</div>
+				
+			</div>
+			
+			
+			<div class="field-1">
+				<label>Firstname</label>
+				<input type="text" name="firstname" ng-model="firstname" ng-maxlength="15" required />
+				<div ng-show="reg_form.$submitted || reg_form.firstname.$touched">					
+					 <p ng-show="reg_form.firstname.$error.maxlength">The firstname should be less than 15 char.</p>				
+					 <p ng-show="reg_form.firstname.$error.required">Please enter firstname.</p>
+				</div>
+			</div>
+
+			<div class="field-1">
+				<label>Lastname</label>
+				<input type="text" name="lastname" ng-model="lastname"  ng-maxlength="15" required  />
+				<div ng-show="reg_form.$submitted || reg_form.lastname.$touched">					
+					 <p ng-show="reg_form.lastname.$error.maxlength">The firstname should be less than 15 char.</p>				
+					 <p ng-show="reg_form.lastname.$error.required">Please enter lastname.</p>
+				</div>
+			</div>
+
+			<div class="field-1">
+				<label>Email</label>
+				<input type="email" name="email" ng-model="email"  required  />
+				<div ng-show="reg_form.$submitted || reg_form.email.$touched">					
+					 <p ng-show="reg_form.email.$error.email">Please enter valid your email.</p>
+					 <p ng-show="reg_form.email.$error.required">Please enter your email.</p>
+				</div>
+			</div>
+
+			<div class="field-1">
+				<label>Password</label>
+				<input type="password" name="password" id="password" ng-model="password" ng-minlength="3" ng-maxlength="8" required />
+				<div ng-show="reg_form.$submitted || reg_form.password.$touched">					
+					 <p ng-show="reg_form.password.$error.minlength || reg_form.password.$error.maxlength">The password length must be in range of 3 to 8!</p>				
+					 <p ng-show="reg_form.password.$error.required">Please enter password.</p>
+				</div>
+			</div>
+
+			<div class="field-1">
+				<label>Confirm Password</label>
+				<input  type="password" name="confirm_password" id="confirm_password" ng-model="confirm_password"  ng-minlength="3" ng-maxlength="8" required pw-check="password" />
+				<div ng-show="reg_form.$submitted || reg_form.confirm_password.$touched">					
+					 <p ng-show="reg_form.confirm_password.$error.minlength || reg_form.confirm_password.$error.maxlength">The password length must be in range of 3 to 8!</p>				
+					 <p ng-show="reg_form.password.$error.required">Please confirm your password.</p>
+					 <p class="msg-error" ng-show="reg_form.confirm_password.$error.pwmatch">Both passwords do not match.</p>
+				</div>
+			</div>
+			
+			<div class="field-1">
+				<label>Gender</label>
+				<input type="radio" name="gender" ng-model="gender" value="male" required /><span>Male</span>
+				<input type="radio" name="gender" ng-model="gender" value="female" required   /><span>Female</span>
+				<div ng-show="reg_form.$submitted">		
+					 <p class="msg-error" ng-show="reg_form.gender.$error.required">Please select your gender.</p>
+				</div>
+			</div>
+			
+			<div class="field-1">
+				<label>Education</label>
+				
+				<span ng-repeat="choice in choices">
+					<input id="{{choice.value}}" type="checkbox" value="{{choice.value}}" ng-checked="selection.indexOf(choice.value) > -1" ng-click="toggleSelection(choice.value)" />
+					<span>{{choice.label}}</span>
+				</span>				
+				<!--div ng-show="reg_form.$submitted">		
+					 <p class="msg-error" ng-show="choicesCount==0">Please select your education qualification.</p>
+				</div-->
+			
+			</div>
+			
+			<!--div ng-repeat="name in selection" class="selected-item">
+				{{name}}
+			</div-->
+					
+			<div class="field-1">
+				<label>Phone Number</label>
+				<input type="text" name="phone_number" ng-model="phone_number" ng-maxlength="10" integer  />
+				 <p ng-show="reg_form.phone_number.$error.integer">Please enter digits only.</span>
+				 <p ng-show="reg_form.phone_number.$error.maxlength">The max-length for phone number is 15.</p>
+							
+			</div>
+			
+			<div class="field-1">
+				<label>Address</label>
+				<textarea name = "address" ng-model="address" ></textarea>
+			
+			<div class="field-1">
+				<label>Country</label>	
+				 <select name="country" ng-model="country" ng-options="country.country_code as country.country_name for country in countries" required ng-change="get_states(country)"> 
+					<option value="">Select country</option> 
+				 </select> 
+				<div ng-show="reg_form.$submitted">		
+					 <p class="msg-error" ng-show="reg_form.country.$error.required">Please select your country.</p>
+				</div>	
+			</div>
+			
+			<div class="field-1">
+				<label>State</label>
+				<select name = "state" ng-model="state">
+				<option value="">Select State</option>
+				<option ng-repeat = "x in states" value="{{x.state_code}}">{{x.state_name}}</option>
+				</select>
+				
+			</div>
+		
+			<div class="field-1">
+				<label>Zipcode</label>
+				<input type="text" name = "zipcode" ng-model="zipcode" value="" ng-maxlength="10" />
+				<div ng-show="reg_form.$submitted">		
+					 <p class="msg-error" ng-show="reg_form.zipcode.$error.maxlength">Please enter zipcode of max length 10.</p>
+				</div>
+			</div>
+			
+			<div class="field-1 field-2">
+				<input type="button" ng-click="reset(reg_form)" value="Reset" />			
+				 <input data-ng-disabled="progress.active()" type="submit" ng-click="submitForm(reg_form)" value="Save" />
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

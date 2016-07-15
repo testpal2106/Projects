@@ -1,0 +1,50 @@
+.register_form{width:100%;float:left;}
+.register_form .field-1{float: left; padding: 8px 0px 9px 0px;width:100%;}
+.register_form .field-1 label{    width: 14%;    float: left;    padding: 10px;}
+input{
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	width:50%;
+	background-color: white;
+	border: 1px solid #dedede;
+	padding: 10px;
+}
+input[type=checkbox], input[type=radio]{	
+	width:1%;
+}
+input:focus {   
+    border: 1px solid #555;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:20%;
+}
+select {
+    width: 52%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+textarea {
+    width: 52%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+.field-2{    width: 43% !important;}
+.field-2 input{float:right;}
+.field-1 p{color: red; margin: 0 0 0 200px; font-size:13px;}
+
+
+
