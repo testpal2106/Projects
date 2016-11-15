@@ -11,7 +11,6 @@ $i=1;
 if($result->num_rows > 0){
 	while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 		$date=$row['date_created'];
-			
 		$response[$i]['sno'] = $i++;
 		$response[$i]['id'] = $row['id'];
 		$response[$i]['name'] = $row['firstname']. ' ' .$row['lastname'];

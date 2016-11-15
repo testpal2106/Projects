@@ -1,62 +1,148 @@
-<!doctype html>
 <html>
+   
 	<head>
-		<title></title>
+		<title>Angular JS Views</title>
+		<script src="js/jquery.min.js"></script> 
 		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src = "js/app.js"></script>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+		<script src="js/app.js"></script>  
 		<style>
-			table, th , td {
-				border: 1px solid grey;
-				border-collapse: collapse;
-				padding: 5px;
-			}
-
-			table tr:nth-child(odd) {
-				background-color: #f2f2f2;
-			}
-
-			table tr:nth-child(even) {
-				background-color: #ffffff;
-			}
+		label {
+			float: left;
+			width: 23%;
+		}
 		</style>
-	</head>
-	<body ng-app="crud1">
-		<div class="container">
-			<h2>
-				<p><a href = "#addUser">Add Student</a></p>
-				<p><a href = "#viewUsers">View Students</a></p></h2>
-				
-			<div ng-view></div>
+      
+    </head>
+   
+   <body>
+      <h2>AngularJS Sample Application</h2>
+      <div ng-app = "mainApp">
+        <p><a href = "#addStudent">Add Student</a></p>
+        <p><a href = "#viewStudents">View Students</a></p>
+        <div ng-view></div>
          
-			<script type = "text/ng-template" id = "addStudent.html">
-				<h2> Add Student </h2>
-				{{message}}
-			</script>
-			 
-			<script type = "text/ng-template" id = "viewStudents.html">
-				<h2> View Students </h2>
-				{{message}}
-			</script>
-			<div ng-controller="viewUsersController">
-				<table>
-					<tr>
-						<td>S.No</td>
-						<td>Name</td>
-						<td>Email</td>
-						<td>Address</td>
-						<td>Date Created</td>
-						<td>Action</td>
-					</tr>
-					<tr ng-repeat="user in users">
-						<td>{{user.sno}}</td>
-						<td>{{user.name}}</td>
-						<td>{{user.email}}</td>
-						<td>{{user.address}}</td>
-						<td>{{user.date_created}}</td>
-						<td><a href="" >Edit</a> - <a href="" >Delete</a></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</body>
+        <script type = "text/ng-template" id = "addStudent.htm">
+            <h2> Add Student </h2>
+          
+            <div class="add_student_div">
+				<div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+				<form name="addstudent_form" novalidate >
+					<div class="row-item">
+						<label>First name</label>
+						<input type="text" name="firstname" ng-model="firstname">
+						<div ng-show="addstudent_form.$submitted || addstudent_form.firstname.$touched">					
+							 <p ng-show="addstudent_form.firstname.$error.maxlength">The firstname should be less than 15 char.</p>				
+							 <p ng-show="addstudent_form.firstname.$error.required">Please enter firstname.</p>
+						</div>
+					</div>
+					<div class="row-item">
+						<label>Last name</label>
+						<input type="text" name="lastname" ng-model="lastname">
+						<div ng-show="addstudent_form.$submitted || addstudent_form.lastname.$touched">
+						  <div ng-show="addstudent_form.lastname.$error.required">Please enter your lastname.</div>
+						</div>
+					</div>
+					<div class="row-item">
+						<label>Email Address</label>
+						<input type="text" name="email" ng-model="email">
+						<div ng-show="addstudent_form.$submitted || addstudent_form.email.$touched">
+							<span ng-show="addstudent_form.email.$error.required">Please enter your email.</span>
+							<span ng-show="addstudent_form.email.$error.email">Please enter a valid email.</span>
+						</div>
+					</div>
+					<div class="row-item">
+						<label>Password</label>
+						<input type="password" name="password" ng-model="password">
+						<div ng-show="addstudent_form.$submitted || addstudent_form.password.$touched">
+						  <div ng-show="addstudent_form.password.$error.required">Please enter your password.</div>
+						</div>
+					</div>
+					<div class="row-item">
+						<label>Confirm Password</label>
+						<input type="password" name="confirm_password" ng-model="confirm_password">.
+						<div ng-show="addstudent_form.$submitted || addstudent_form.confirm_password.$touched">
+							<span ng-show="addstudent_form.confirm_password.$error.required">Please confirm your password.</span>
+							<span class="msg-error" ng-show="addstudent_form.confirm_password.$error.pwmatch">Both passwords do not match.</span>
+						</div>
+					</div>
+				
+					<div class="row-item">
+						<input type="button" name="submit" value="Submit" ng-click="addstudent_form.$valid && addStudent(addstudent_form)" >
+						
+					</div>
+				</form>
+            </div>
+        </script>
+         
+        <script type = "text/ng-template" id = "viewStudents.htm">
+            <h2> View Students </h2>
+          
+            <table>
+				<tr>
+					<td>S.no</td>
+					<td>Name</td>
+					<td>Email</td>
+					<td>Date Created</td>
+					<td>Action</td>
+				</tr>
+				<tr ng-repeat="student in students">
+					<td>{{student.sno}} </td>
+					<td>{{student.name}} </td>
+					<td>{{student.email}} </td>
+					<td>{{student.date_created}} </td>
+					<td><a href="#/editStudent/{{student.id}}" >Edit</a></td>
+					<td><a href="#/deleteStudent/{{student.id}}" >Delete</a></td>
+				</tr>
+            </table>
+        </script>
+        
+        
+          <script type = "text/ng-template" id = "editStudent.htm">
+            <h2> Edit Student </h2>
+          
+            <div class="add_student_div">
+				<div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+				<form name="editstudent_form" novalidate >
+					<div class="row-item">
+						<label>First name</label>
+						<input type="text" name="firstname" ng-model="student.firstname">
+						 <span ng-show="editstudent_form.name.$dirty && editstudent_form.name.$invalid" class="help-inline">Name Required</span>
+					</div>
+					<div class="row-item">
+						<label>Last name</label>
+						<input type="text" name="lastname" ng-model="student.lastname">
+						<span ng-show="editstudent_form.name.$dirty && editstudent_form.name.$invalid" class="help-inline">Name Required</span>
+					</div>
+					<div class="row-item">
+						<label>Email Address</label>
+						<input type="text" name="email" ng-model="student.email">
+						 <span ng-show="editstudent_form.email.$dirty && editstudent_form.email.$invalid && !editstudent_form.email.$error.email" class="help-inline">Email Required</span>
+						<span ng-show="editstudent_form.email.$error.email" class="help-inline">Email is not valid</span>
+					</div>
+					<div class="row-item">
+						<label>Password</label>
+						<input type="password" name="password" ng-model="student.password">
+						<span ng-show="editstudent_form.password.$error.required">Please enter password.</span>
+					</div>
+					<div class="row-item">
+						<label>Confirm Password</label>
+						<input type="password" name="confirm_password" ng-model="student.confirm_password">.
+						<div ng-show="editstudent_form.$submitted || editstudent_form.confirm_password.$touched">
+							<span ng-show="editstudent_form.confirm_password.$error.required">Please confirm  password.</span>
+							<span class="msg-error" ng-show="editstudent_form.confirm_password.$error.pwmatch">Both passwords do not match.</span>
+						</div>
+					</div>
+				
+					<div class="row-item">
+						<input type="button" name="submit" value="Submit" ng-click="editstudent_form.$valid && editStudent(editstudent_form,student)" >
+					</div>
+				</form>
+            </div>
+        </script>
+         
+        
+      </div>
+      
+   </body>
 </html>
